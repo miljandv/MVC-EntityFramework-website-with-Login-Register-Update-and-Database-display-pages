@@ -1,0 +1,50 @@
+﻿@using MVC_test.WebUI.Models
+@model System.Collections.Generic.List<MVC_test.BL.Records.Model.RecordEntityModel>
+<script type="text/javascript">
+    function hoveru(name) {
+        alert("Click to update " + name + "'s account");
+    }
+</script>
+<script>
+    $.notify.addStyle('blue', {
+        html: "<div><span data-notify-text/></div>",
+        classes: {
+            base: {
+                "white-space": "nowrap",
+                "background-color": "darkblue",
+                "padding": "5px"
+            },
+            superblue: {
+                "color": "white",
+                "background-color": "darkblue"
+            }
+        }
+    });
+</script>
+@if (Model != null && Model.Count != 0)
+{
+    <table id="tabl">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th><div class="elem-demo1" onmouseover="$('.elem-demo1').notify('Update an account', {style: 'blue',position:'top-center'});">Update</div></th>
+            <th><div class="elem-demo2" onmouseover="$('.elem-demo2').notify('Remove an account', {style: 'blue',position:'top-center'});">Remove</div></th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@Model[i].Fname</td>
+                <td>@Model[i].Lname</td>
+                <td>@Model[i].Phone</td>
+                <td align="center"><a style="color:green;" id="ufun" href="@Url.RouteUrl(RouteNames.RecordUpdate,new {id = Model[i].Phone})">&#11165;</a></td>
+                <td align="center"><a style="color:red;" id="xfun" href="@Url.RouteUrl(RouteNames.RecordRemove,new {id = Model[i].Phone})">&#x274C;</a></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h1>Data base is empty</h1>
+}
+

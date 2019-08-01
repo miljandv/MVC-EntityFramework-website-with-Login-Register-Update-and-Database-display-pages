@@ -1,0 +1,49 @@
+﻿@using MVC_test.WebUI.Models
+@functions{
+    static String GetCurrentPage(String s)
+    {
+        String curr = HttpContext.Current.Request.Url.ToString();
+        String[] currs = curr.Split('/');
+        if (currs.Length == 4 && s.Equals("Home")) return "active";
+        String last = currs[currs.Length - 1];
+        if (last.Equals(s) || (last.Equals("Register") && s.Equals("Login"))) return "active";
+        else return "inactive";
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Style/index.css" rel="stylesheet" />
+    <link href="~/Style/site.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="~/Scripts/notify.js"></script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul id="head">
+            <li><a id="not" class=@GetCurrentPage("Home") href="@Url.RouteUrl(RouteNames.Home)"> Home</a></li>
+            <li><a class=@GetCurrentPage("Login") href="@Url.RouteUrl(RouteNames.RecordLogin)">Login</a></li>
+            <li><a class=@GetCurrentPage("Users") href="@Url.RouteUrl(RouteNames.RecordUsers)">Users</a></li>
+        </ul>
+    </header>
+    @RenderBody()
+    <footer>
+        <a href="#" class="fa fa-facebook">
+            <a href="#" class="fa fa-twitter">
+                <a href="#" class="fa fa-google">
+                    <a href="#" class="fa fa-linkedin">
+                        <a href="#" class="fa fa-skype"></a>
+    </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

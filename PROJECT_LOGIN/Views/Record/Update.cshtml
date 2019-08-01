@@ -1,0 +1,20 @@
+﻿@model MVC_test.BL.Records.Model.RecordEntityModel
+@using MVC_test.WebUI
+@using MVC_test.WebUI.Models
+<title>@ViewData["Update"]</title>
+
+@using (Html.BeginForm("Update", "Record", FormMethod.Post, new { id = "logoutForm" }))
+{
+    <form id="form1" align="center" width="100%">
+        <div id="child">
+            <table id="tbl" align="center">
+                <tr><th colspan="2" id="tablehead"><b>ACCOUNT UPDATE</b></th></tr>
+                <tr><td><b>First Name:</b></td><td>@Html.TextBoxFor(model => model.Fname)</td></tr>
+                <tr><td><b>Last Name:</b></td><td>@Html.TextBoxFor(model => model.Lname)</td></tr>
+                <tr><td><b>Phone:</b></td><td>@Html.TextBoxFor(model => model.Phone)</td></tr>
+                <tr><td><b>Password:</b></td><td>@Html.TextBoxFor(model => model.Password)</td></tr>
+                <tr><td colspan="2" align="center"><button type="submit" id="btn">Save</button></td></tr>
+            </table>
+        </div>
+    </form> 
+}

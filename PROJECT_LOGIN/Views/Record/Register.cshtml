@@ -1,0 +1,51 @@
+﻿@model MVC_test.BL.Records.Model.RecordEntityModel
+@using MVC_test.WebUI
+@using MVC_test.WebUI.Models
+<title>@ViewData["Login"]</title>
+
+@using (Html.BeginForm("Register", "Record", FormMethod.Post, new { id = "logoutForm" }))
+{
+    @Html.AntiForgeryToken()
+    <form id="form1" align="center" width="100%">
+        <div id="child">
+            <table id="tbl" align="center">
+                <tr><th colspan="2" id="tablehead"><b>REGISTER</b></th></tr>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <tr>
+                    <td><b> @Html.LabelFor(model => model.Fname, htmlAttributes: new { @class = "control-label col-md-2" })</b></td>
+                    <td>
+                        @Html.EditorFor(model => model.Fname, new { htmlAttributes = new { @class = "form-control" } })
+                        <font color="red" size="1">@Html.ValidationMessageFor(model => model.Fname, "", new { @class = "text-danger" })</font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b> @Html.LabelFor(model => model.Lname, htmlAttributes: new { @class = "control-label col-md-2" })</b></td>
+                    <td>
+                        @Html.EditorFor(model => model.Lname, new { htmlAttributes = new { @class = "form-control" } })
+                        <font color="red" size="1">@Html.ValidationMessageFor(model => model.Lname, "", new { @class = "text-danger" })</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>@Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })</b></td>
+                    <td>
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                        <font color="red" size="1">@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b> @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })</b></td>
+                    <td>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        <font color="red" size="1">@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</font>
+                    </td>
+                </tr>
+                <tr><td colspan="2" align="center"><button type="submit" id="btn">Register</button></td></tr>
+                <tr><td colspan="2" id="reglog">Already have an account? <a href="@Url.RouteUrl(RouteNames.RecordLogin)" id="log">Login</a></td></tr>
+            </table>
+        </div>
+    </form>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
