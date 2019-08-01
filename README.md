@@ -1,1 +1,31 @@
-# ASP.NET-MVC-EntityFramework-website-with-Login-Register-Update-Database-display-pages
+# C# Web application with pages for: User Login, Registration, Account update, and Database display. Project follows MVC architecture.
+Packages used:
+- Antlr.3.5.0.2
+- bootstrap.3.0.0
+- Castle.Core.4.3.1 (Probably not required anymore)
+- Castle.Windsor.5.0.0 (Probably not required anymore)
+- Dapper.1.60.6
+- EntityFramework.6.2.0
+- jQuery.1.10.2
+- jQuery.Validation.1.11.1
+- Microsoft.AspNet.Mvc.5.2.7
+- Microsoft.AspNet.Razor.3.2.7
+- Microsoft.AspNet.Web.Optimization.1.1.3
+- Microsoft.AspNet.WebPages.3.2.7
+- Microsoft.Bcl.1.1.10
+- Microsoft.Bcl.Build.1.0.14
+- Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1
+- Microsoft.jQuery.Unobtrusive.Validation.3.2.3
+- Microsoft.Net.Http.2.2.29
+- Microsoft.Web.Infrastructure.1.0.0.0
+- Modernizr.2.6.2
+- Newtonsoft.Json.6.0.4
+- System.Core.3.5.21022.801
+- System.Data.SqlClient.4.6.1
+- System.Net.Http.4.3.4
+- System.Runtime.4.3.1
+- System.Security.Cryptography.Algorithms.4.3.0
+- System.Security.Cryptography.Encoding.4.3.0
+- System.Security.Cryptography.Primitives.4.3.0
+- System.Security.Cryptography.X509Certificates.4.3.0
+- WebGrease.1.5.2
